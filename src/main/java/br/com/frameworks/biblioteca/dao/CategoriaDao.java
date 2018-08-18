@@ -84,7 +84,7 @@ public class CategoriaDao implements GenericDao<Categoria> {
         ResultSet rs = ps.executeQuery();
 
         ArrayList<Categoria> categorias = new ArrayList<>();
-        Categoria categoria = null;
+        Categoria categoria;
 
         while(rs.next()){
             Long idCategoria = rs.getLong("id");

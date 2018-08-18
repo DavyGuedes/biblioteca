@@ -10,10 +10,11 @@ public class Livro implements Serializable {
     private static final long serialVersionUID = -1988667952448229901L;
 
     private Long id;
-    private String nome;
+    private String titulo;
     private String autor;
     private Integer volume;
     private String ano;
+    private String descricao;
     private Integer qtdExemplares;
     private StatusLivro statusLivro;
     private Categoria categoria;
@@ -21,12 +22,13 @@ public class Livro implements Serializable {
     public Livro() {
     }
 
-    public Livro(Long id, String nome, String autor, Integer volume, String ano, Integer qtdExemplares, StatusLivro statusLivro, Categoria categoria) {
+    public Livro(Long id, String titulo, String autor, Integer volume, String ano, String descricao, Integer qtdExemplares, StatusLivro statusLivro, Categoria categoria) {
         this.id = id;
-        this.nome = nome;
+        this.titulo = titulo;
         this.autor = autor;
         this.volume = volume;
         this.ano = ano;
+        this.descricao = descricao;
         this.qtdExemplares = qtdExemplares;
         this.statusLivro = statusLivro;
         this.categoria = categoria;
@@ -40,12 +42,12 @@ public class Livro implements Serializable {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getTitulo() {
+        return titulo;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
     public String getAutor() {
@@ -70,6 +72,14 @@ public class Livro implements Serializable {
 
     public void setAno(String ano) {
         this.ano = ano;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
     public Integer getQtdExemplares() {
@@ -102,10 +112,11 @@ public class Livro implements Serializable {
         if (o == null || getClass() != o.getClass()) return false;
         Livro livro = (Livro) o;
         return Objects.equals(id, livro.id) &&
-                Objects.equals(nome, livro.nome) &&
+                Objects.equals(titulo, livro.titulo) &&
                 Objects.equals(autor, livro.autor) &&
                 Objects.equals(volume, livro.volume) &&
                 Objects.equals(ano, livro.ano) &&
+                Objects.equals(descricao, livro.descricao) &&
                 Objects.equals(qtdExemplares, livro.qtdExemplares) &&
                 statusLivro == livro.statusLivro &&
                 Objects.equals(categoria, livro.categoria);
@@ -114,6 +125,6 @@ public class Livro implements Serializable {
     @Override
     public int hashCode() {
 
-        return Objects.hash(id, nome, autor, volume, ano, qtdExemplares, statusLivro, categoria);
+        return Objects.hash(id, titulo, autor, volume, ano, descricao, qtdExemplares, statusLivro, categoria);
     }
 }
