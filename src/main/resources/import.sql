@@ -38,6 +38,7 @@ ALTER TABLE public.categoria
 
 -- Table: public.livro
 
+
 CREATE TABLE public.livro
 (
     id bigint NOT NULL,
@@ -48,6 +49,7 @@ CREATE TABLE public.livro
     qtd_exemplares bigint,
     status_livro character varying COLLATE pg_catalog."default",
     categoria_id bigint,
+    descricao character varying COLLATE pg_catalog."default",
     CONSTRAINT livro_pkey PRIMARY KEY (id),
     CONSTRAINT categoria_id_fk FOREIGN KEY (categoria_id)
         REFERENCES public.categoria (id) MATCH SIMPLE
