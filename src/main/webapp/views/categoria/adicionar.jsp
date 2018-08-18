@@ -21,19 +21,17 @@ Usuário logado: ${userLogado.nome}
 
 <div id="add">
     <h2>Compromisso</h2>
-    <form action="sistema" method="post">
+    <form action="/sistema" method="post" class="form-horizontal">
         <input type="hidden" name="logica" value="AdicionaCategoria" />
-        <form action="sistema" method="post" class="form-horizontal">
             <fieldset>
                 <!--<legend>Legend</legend>-->
                 <div class="form-group">
                     <label for="inputTitulo" class="col-lg-2 control-label">Nome</label>
                     <div class="col-lg-10">
-                        <input type="text" class="form-control" id="inputTitulo" placeholder="título" value="${livro.nome}">
+                        <input type="text" name="nome" class="form-control" id="inputNome" placeholder="título" value="${livro.nome}">
                     </div>
                 </div>
             </fieldset>
-        </form>
         <input type="submit" value="Enviar"/> <br>
     </form>
 </div>

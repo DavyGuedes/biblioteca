@@ -16,28 +16,19 @@
 <body>
 <p><h2>Lista de Compromissos</h2></p>
 <div id="listaCompromisso">
-    <table border="1">
+    <table class="table-responsive card-list-table">
         <tr class="titulo-lista">
-            <td>ID</td>
-            <td>TÍTULO</td>
-            <td>AUTOR</td>
-            <td>VOLUME</td>
-            <td>ANO</td>
+            <th>ID</th>
+            <th>TÍTULO</th>
+            <th>AUTOR</th>
+            <th>VOLUME</th>
+            <th>ANO</th>
             <%--<td>DESCRIÇÃO</td>--%>
-            <td>EXEMPLARES</td>
-            <td>CATEGORIA</td>
-            <td colspan="2"></td>
+            <th>EXEMPLARES</th>
+            <th>CATEGORIA</th>
+            <th colspan="2"></th>
         </tr>
         <c:forEach var="item" items="${lista}">
-            <%--  private Long id;
-    private String titulo;
-    private String autor;
-    private Integer volume;
-    private String ano;
-    private String descricao;
-    private Integer qtdExemplares;
-    private StatusLivro statusLivro;
-    private Categoria categoria;--%>
             <tr>
                 <td>${item.id}</td>
                 <td>${item.titulo}</td>
