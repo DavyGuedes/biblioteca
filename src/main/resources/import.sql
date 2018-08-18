@@ -1,23 +1,23 @@
--- Table: public."Usuario"
+-- Table: public."usuario"
 
-CREATE TABLE public."Usuario"
+CREATE TABLE public."usuario"
 (
     id bigint NOT NULL,
     nome character varying COLLATE pg_catalog."default" NOT NULL,
     senha character varying COLLATE pg_catalog."default" NOT NULL,
-    "tipoUsuario" character varying COLLATE pg_catalog."default" NOT NULL,
-    CONSTRAINT "Usuario_pkey" PRIMARY KEY (id)
+    "tipo_usuario" character varying COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT "usuario_pkey" PRIMARY KEY (id)
 )
 WITH (
     OIDS = FALSE
 )
 TABLESPACE pg_default;
 
-ALTER TABLE public."Usuario"
+ALTER TABLE public."usuario"
     OWNER to postgres;
 
 -- Insert data:
-INSERT INTO Usuario(id, nome, senha, tipoUsuario) values(1, "administrador", "admin", "ADMIN");
+INSERT INTO usuario(id, nome, senha, tipo_usuario) values(1, 'administrador', 'admin', 'ADMIN');
 
 
 -- Table: public.categoria
