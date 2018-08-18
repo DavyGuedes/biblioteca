@@ -7,10 +7,9 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="/imports.jsp" %>
-<%@include file="/imports.jsp" %>
 <html>
 <head>
-    <title>Compromissos</title>
+    <title>Categoria</title>
     <c:import url="/cabecalho.jsp" />
 </head>
 <body>
@@ -20,15 +19,14 @@ Usuário logado: ${userLogado.nome}
 <hr>
 
 <div id="add">
-    <h2>Compromisso</h2>
+    <h2>Categoria</h2>
     <form action="/sistema" method="post" class="form-horizontal">
         <input type="hidden" name="logica" value="AdicionaCategoria" />
             <fieldset>
-                <!--<legend>Legend</legend>-->
                 <div class="form-group">
-                    <label for="inputTitulo" class="col-lg-2 control-label">Nome</label>
+                    <label for="inputNome" class="col-lg-2 control-label">Nome</label>
                     <div class="col-lg-10">
-                        <input type="text" name="nome" class="form-control" id="inputNome" placeholder="título" value="${livro.nome}">
+                        <input type="text" name="nome" class="form-control" id="inputNome" placeholder="título" />
                     </div>
                 </div>
             </fieldset>

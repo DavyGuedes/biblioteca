@@ -18,7 +18,7 @@
 <div class="container">
 
     <p><h2>Lista de Categorias</h2></p>
-    <div id="listaCompromisso">
+    <div id="listaCategorias">
         <table class="table-responsive card-list-table">
             <tr class="titulo-lista">
                 <th>ID</th>
@@ -30,7 +30,7 @@
                 <tr>
                     <td>${item.id}</td>
                     <td>${item.nome}</td>
-                    <td><a href="/views/categoria/alterar.jsp?id=${item.id}">Alterar</a></td>
+                    <td><a href="/views/categoria/alterar.jsp?id=${item.id}&nome=${item.nome}">Alterar</a></td>
 
                     <td><a href="sistema?logica=DeletaCategoria&id=${item.id}">Deletar</a></td>
                 </tr>
