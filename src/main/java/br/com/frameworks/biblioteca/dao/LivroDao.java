@@ -81,7 +81,7 @@ public class LivroDao implements GenericDao<Livro> {
         ps.setLong(1, id);
         ResultSet rs = ps.executeQuery();
 
-        if(rs.next()){
+        if (rs.next()) {
             livro = getLivro(rs);
         }
         rs.close();
@@ -97,7 +97,7 @@ public class LivroDao implements GenericDao<Livro> {
         ArrayList<Livro> livros = new ArrayList<>();
         Livro livro;
 
-        while(rs.next()){
+        while (rs.next()) {
             livro = getLivro(rs);
             livros.add(livro);
         }
@@ -106,7 +106,7 @@ public class LivroDao implements GenericDao<Livro> {
         return livros;
     }
 
-    private Livro getLivro (ResultSet rs) throws SQLException {
+    private Livro getLivro(ResultSet rs) throws SQLException {
         CategoriaDao categoriaDao = new CategoriaDao(connection);
 
         Long idLivro = rs.getLong("id");
@@ -119,6 +119,6 @@ public class LivroDao implements GenericDao<Livro> {
         StatusLivro statusLivro = StatusLivro.valueOf(rs.getString("status_livro"));
         Categoria categoria = categoriaDao.getEntity(rs.getLong("categoria"));
 
-        return new Livro(idLivro,titulo,autor,volume,ano,descricao,qtdExemplares,statusLivro,categoria);
+        return new Livro(idLivro, titulo, autor, volume, ano, descricao, qtdExemplares, statusLivro, categoria);
     }
 }

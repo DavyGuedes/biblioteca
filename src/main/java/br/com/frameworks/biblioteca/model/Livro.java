@@ -34,6 +34,17 @@ public class Livro implements Serializable {
         this.categoria = categoria;
     }
 
+    public Livro(String titulo, String autor, Integer volume, String ano, String descricao, Integer qtdExemplares, StatusLivro statusLivro, Categoria categoria) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.volume = volume;
+        this.ano = ano;
+        this.descricao = descricao;
+        this.qtdExemplares = qtdExemplares;
+        this.statusLivro = statusLivro;
+        this.categoria = categoria;
+    }
+
     public Long getId() {
         return id;
     }
