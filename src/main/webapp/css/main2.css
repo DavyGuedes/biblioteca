@@ -1,31 +1,56 @@
+#titulo{
+
+    margin-top: auto;
+    color: #3742fa;
+}
+
 body {
     font: 75%/1.6 "Myriad Pro", Frutiger, "Lucida Grande", "Lucida Sans", "Lucida Sans Unicode", Verdana, sans-serif;
 }
 table {
-    border-collapse: collapse;
+    border-collapse: separate;
     width: 50em;
-    border: 1px solid #666;
+    border: 3px solid ;
 }
+/*PRIMEIRA LINHA*/
 thead {
+    background: #57606f;
+    border-top: 3px;
+    border-bottom: 3px;
+}
+/*SEGUNDA LINHA EM DIANTE*/
+tbody {
     background: #ccc url(https://www.devfuria.com.br/html-css/tabelas/bar.gif) repeat-x left center;
-    border-top: 1px solid #a5a5a5;
-    border-bottom: 1px solid #a5a5a5;
+    border-top: 3px;
+    border-bottom: 3px;
 }
-tr:hover {
-    background-color:#3d80df;
-    color: #fff;
-}
+
+/*PRIMEIRA LINHA SE SELECIONADA*/
 thead tr:hover {
-    background-color: transparent;
-    color: inherit;
+    background-color: #70a1ff;
+    color: #FFFFFF;
 }
-tr:nth-child(even) {
-    background-color: #edf5ff;
+
+/*SEGUNDA LINHA EM DIANTE SELECIONADA*/
+#itens:hover{
+    background-color: #70a1ff;
+    color: #FFFFFF;
 }
-th {
-    font-weight: normal;
-    text-align: left;
-}
+
 th, td {
     padding: 0.1em 1em;
+
 }
+
+#btnAdd{
+    margin-top: 5%;
+    margin-left: 45%;
+    width: 10%;
+}
+
+#btnMenu{
+    width: 10%;
+    margin-left: 45%;
+    margin-bottom:100%;
+}
+
