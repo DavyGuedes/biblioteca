@@ -2,8 +2,9 @@
 
 CREATE TABLE public."usuario"
 (
-    id bigint NOT NULL,
+    id serial NOT NULL,
     nome character varying COLLATE pg_catalog."default" NOT NULL,
+    login character varying COLLATE pg_catalog."default" NOT NULL,
     senha character varying COLLATE pg_catalog."default" NOT NULL,
     "tipo_usuario" character varying COLLATE pg_catalog."default" NOT NULL,
     CONSTRAINT "usuario_pkey" PRIMARY KEY (id)
@@ -17,14 +18,14 @@ ALTER TABLE public."usuario"
     OWNER to postgres;
 
 -- Insert data:
-INSERT INTO usuario(id, nome, senha, tipo_usuario) values(1, 'administrador', 'admin', 'ADMIN');
+INSERT INTO usuario(id, nome, login, senha, tipo_usuario) values(1, 'administrador', 'admin', 'admin', 'ADMIN');
 
 
 -- Table: public.categoria
 
 CREATE TABLE public.categoria
 (
-    id bigint NOT NULL,
+    id serial NOT NULL,
     nome character varying COLLATE pg_catalog."default" NOT NULL,
     CONSTRAINT categoria_pkey PRIMARY KEY (id)
 )
@@ -41,7 +42,7 @@ ALTER TABLE public.categoria
 
 CREATE TABLE public.livro
 (
-    id bigint NOT NULL,
+    id serial NOT NULL,
     titulo character varying COLLATE pg_catalog."default" NOT NULL,
     autor character varying COLLATE pg_catalog."default",
     volume bigint,

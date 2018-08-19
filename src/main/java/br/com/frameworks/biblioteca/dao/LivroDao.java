@@ -22,7 +22,7 @@ public class LivroDao implements GenericDao<Livro> {
     @Override
     public boolean adiciona(Livro entity) throws SQLException {
         boolean result;
-        String sql = "insert into livro (titulo, autor, volume, ano, descricao, qtd_exemplares, status_livro, categoria) values (?,?,?,?,?,?,?,?)";
+        String sql = "insert into livro (titulo, autor, volume, ano, descricao, qtd_exemplares, status_livro, categoria_id) values (?,?,?,?,?,?,?,?)";
 
         PreparedStatement ps = connection.prepareStatement(sql);
         ps.setString(1, entity.getTitulo());
@@ -42,7 +42,7 @@ public class LivroDao implements GenericDao<Livro> {
     @Override
     public boolean altera(Livro entity) throws SQLException {
         boolean result;
-        String sql = "update livro set titulo = ?, autor = ?, volume = ?, ano = ?, descricao = ?, qtd_exemplares = ?, status_livro = ?, categoria = ? where id = ?";
+        String sql = "update livro set titulo = ?, autor = ?, volume = ?, ano = ?, descricao = ?, qtd_exemplares = ?, status_livro = ?, categoria_id = ? where id = ?";
 
         PreparedStatement ps = connection.prepareStatement(sql);
         ps.setString(1, entity.getTitulo());
@@ -81,7 +81,7 @@ public class LivroDao implements GenericDao<Livro> {
         ps.setLong(1, id);
         ResultSet rs = ps.executeQuery();
 
-        if(rs.next()){
+        if (rs.next()) {
             livro = getLivro(rs);
         }
         rs.close();
@@ -97,7 +97,7 @@ public class LivroDao implements GenericDao<Livro> {
         ArrayList<Livro> livros = new ArrayList<>();
         Livro livro;
 
-        while(rs.next()){
+        while (rs.next()) {
             livro = getLivro(rs);
             livros.add(livro);
         }
@@ -106,7 +106,7 @@ public class LivroDao implements GenericDao<Livro> {
         return livros;
     }
 
-    private Livro getLivro (ResultSet rs) throws SQLException {
+    private Livro getLivro(ResultSet rs) throws SQLException {
         CategoriaDao categoriaDao = new CategoriaDao(connection);
 
         Long idLivro = rs.getLong("id");
@@ -117,8 +117,8 @@ public class LivroDao implements GenericDao<Livro> {
         String descricao = rs.getString("descricao");
         Integer qtdExemplares = rs.getInt("qtd_exemplares");
         StatusLivro statusLivro = StatusLivro.valueOf(rs.getString("status_livro"));
-        Categoria categoria = categoriaDao.getEntity(rs.getLong("categoria"));
+        Categoria categoria = categoriaDao.getEntity(rs.getLong("categoria_id"));
 
-        return new Livro(idLivro,titulo,autor,volume,ano,descricao,qtdExemplares,statusLivro,categoria);
+        return new Livro(idLivro, titulo, autor, volume, ano, descricao, qtdExemplares, statusLivro, categoria);
     }
 }

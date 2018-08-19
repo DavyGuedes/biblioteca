@@ -39,7 +39,7 @@ public class AutorizacaoFilter implements Filter {
                 filterChain.doFilter(request, response);
             }else{
                 RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
-                request.setAttribute("msgUser", "Você não tem AUTRIZAÇÃO!!!");
+                request.setAttribute("msgUser", "Você não tem AUTORIZAÇÃO!!!");
                 rd.forward(request, response);
             }
         }

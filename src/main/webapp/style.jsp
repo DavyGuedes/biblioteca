@@ -5,4 +5,4 @@
   Time: 16:58
   To change this template use File | Settings | File Templates.
 --%>
-<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" >
+<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css" >
