@@ -18,27 +18,27 @@
 <div class="container">
 
     <p><h2>Lista de Categorias</h2></p>
-    <div id="listaCategorias">
-        <table class="table-responsive card-list-table">
-            <tr class="titulo-lista">
-                <th>ID</th>
-                <th>NOME</th>
-                <th colspan="2"></th>
-            </tr>
-
-            <c:forEach var="item" items="${categorias}">
-                <tr>
-                    <td>${item.id}</td>
-                    <td>${item.nome}</td>
-                    <td><a href="/views/categoria/alterar.jsp?id=${item.id}&nome=${item.nome}">Alterar</a></td>
-
-                    <td><a href="sistema?logica=DeletaCategoria&id=${item.id}">Deletar</a></td>
-                </tr>
-            </c:forEach>
-        </table>
-    </div>
 
     <form action="/views/categoria/adicionar.jsp" method="post">
+        <div id="listaCategorias">
+            <table class="table-responsive card-list-table">
+                <tr class="titulo-lista">
+                    <th>ID</th>
+                    <th>NOME</th>
+                    <th colspan="2"></th>
+                </tr>
+
+                <c:forEach var="item" items="${categorias}">
+                    <tr>
+                        <td>${item.id}</td>
+                        <td>${item.nome}</td>
+                        <td><a href="/views/categoria/alterar.jsp?id=${item.id}&nome=${item.nome}">Alterar</a></td>
+
+                        <td><a href="sistema?logica=DeletaCategoria&id=${item.id}">Deletar</a></td>
+                    </tr>
+                </c:forEach>
+            </table>
+        </div>
         <input type="submit" value="Add outro Compromisso" />
     </form>
 </div>

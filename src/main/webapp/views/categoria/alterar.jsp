@@ -6,10 +6,11 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page isELIgnored="false" %>
 <%@include file="/imports.jsp" %>
 <html>
 <head>
-    <title>Compromissos</title>
+    <title>Categoria</title>
     <c:import url="/cabecalho.jsp" />
 </head>
 <body>
@@ -40,8 +41,4 @@ Usuário logado: ${userLogado.nome}
     <c:import url="/rodape.jsp" />
 </footer>
 
-<script src="js/jquery-2.1.0.js"></script>
-<script src="js/jquery.inputmask.bundle.min.js"></script>
-<script src="js/jquery.validate.min.js"></script>
-<script src="js/mascara-validacoes.js"></script>
-</html>
+<script src="<c:url value='/js/jquery-3.3.1.min.js'/>"></script>
