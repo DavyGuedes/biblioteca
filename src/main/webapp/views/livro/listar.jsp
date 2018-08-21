@@ -11,7 +11,7 @@
 <html>
 <head>
     <title> Lista de Livros</title>
-    <c:import url="../../cabecalho.jsp"/>
+    <c:import url="/cabecalho.jsp"/>
 
 </head>
 
@@ -20,7 +20,7 @@
     <br>
     <p>
     <h1 align="center"  id="titulo"><b>Lista de Livros</b></h1></p>
-    <div id="Lista de Livros">
+    <div id="Lista de Livros" class="container">
         <table class="table table-hover" align="center" border="1">
             <thead>
             <tr id="atributos" class="lista-livros">
@@ -58,7 +58,7 @@
             </c:forEach>
         </table>
     </div>
-    <form action="adiciona-livro.jsp" method="post">
+    <form action="/views/livro/adicionar.jsp" method="post">
         <button id="btnAdd" type="submit" class="btn btn-success">Add outro Livro</button>
     </form>
     <form action="menu.jsp" method="post">
@@ -66,5 +66,5 @@
     </form>
 </div>
 </body>
-<c:import url="../../rodape.jsp"/>
+<c:import url="/rodape.jsp"/>
 </html>
