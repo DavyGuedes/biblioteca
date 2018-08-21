@@ -24,17 +24,22 @@ public class AutorizacaoFilter implements Filter {
         String uri = req.getRequestURI();
         String logica = req.getParameter("logica");
 
-        if(logica == null){
+        if (logica == null) {
             logica = "";
         }
 
-        if(uri.equals("login.jsp") || logica.endsWith("AutenticaUsuario")){
+        if (uri.contains("login.jsp") || logica.endsWith("AutenticaUsuario") ||
+                uri.contains("/css") ||
+                uri.contains("/js") ||
+                uri.contains(".jpg") ||
+                uri.contains("/fonts/") ||
+                uri.contains("/vendor/")) {
             filterChain.doFilter(request, response);
-        }else{
+        } else {
             Usuario user = (Usuario) req.getSession().getAttribute("userLogado");
-            if(user != null){
+            if (user != null) {
                 filterChain.doFilter(request, response);
-            }else{
+            } else {
                 RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
                 request.setAttribute("msgUser", "Você não tem AUTORIZAÇÃO!!!");
                 rd.forward(request, response);
