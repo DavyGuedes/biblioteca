@@ -8,12 +8,8 @@
 <!--===============================================================================================-->
 <script src="/js/main.js"></script>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!--
+
 <p id="rodape">
-    Copyright 2018 - Todos os direitos reservados <br>
-    @Frameworks 2018.1
-</p>
--->
 
 <footer>
     <div class="row row-cinza-claro">
@@ -82,3 +78,4 @@
     </div>
 
 </footer>
+</p>
