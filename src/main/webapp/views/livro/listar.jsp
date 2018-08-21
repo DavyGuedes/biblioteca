@@ -6,48 +6,65 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page isELIgnored="false" %>
 <%@include file="/imports.jsp" %>
 <html>
 <head>
-    <title>Lista Compromisso</title>
-    <c:import url="/cabecalho.jsp" />
+    <title> Lista de Livros</title>
+    <c:import url="../../cabecalho.jsp"/>
+
 </head>
 
 <body>
-<p><h2>Lista de Compromissos</h2></p>
-<div id="listaCompromisso">
-    <table class="table-responsive card-list-table">
-        <tr class="titulo-lista">
-            <th>ID</th>
-            <th>TÍTULO</th>
-            <th>AUTOR</th>
-            <th>VOLUME</th>
-            <th>ANO</th>
-            <%--<td>DESCRIÇÃO</td>--%>
-            <th>EXEMPLARES</th>
-            <th>CATEGORIA</th>
-            <th colspan="2"></th>
-        </tr>
-        <c:forEach var="item" items="${lista}">
-            <tr>
-                <td>${item.id}</td>
-                <td>${item.titulo}</td>
-                <td>${item.autor}</td>
-                <td>${item.volume}</td>
-                <td>${item.ano}</td>
-                <td>${item.exemplares}</td>
-                <td>${item.categoria}</td>
-                <td><a href="alterar.jsp?id=${item.id}">Alterar</a></td>
-                <td><a href="sistema?logica=DeletaLivro&id=${item.id}">Deletar</a></td>
+<div style="background-image: url('../../images/img-02.jpg');">
+    <br>
+    <p>
+    <h1 align="center"  id="titulo"><b>Lista de Livros</b></h1></p>
+    <div id="Lista de Livros">
+        <table class="table table-hover" align="center" border="1">
+            <thead>
+            <tr id="atributos" class="lista-livros">
+                <td align="center">ID</td>
+                <td align="center">TÍTULO</td>
+                <td align="center">AUTOR</td>
+                <td align="center">ANO</td>
+                <td align="center">EXEMPLARES</td>
+                <td align="center">SITUAÇÃO DO LIVRO</td>
+                <td align="center">CATEGORIA</td>
             </tr>
-        </c:forEach>
-    </table>
+            </thead>
+            <c:forEach var="livro" items="${livros}">
+                <tbody>
+                <tr id="itens">
+                    <td align="center">${livro.id}</td>
+                    <td align="center">${livro.titulo}</td>
+                    <td align="center">${livro.autor}</td>
+                    <td align="center">${livro.ano}</td>
+                    <td align="center">${livro.qtdExemplares}</td>
+                    <td align="center">${livro.statusLivro}</td>
+                    <td align="center">${livro.categoria.nome}</td>
+                    <td align="center"><a href="alterar.jsp?id=${livro.id}&
+                                                                    titulo=${livro.titulo}&
+                                                                    autor=${livro.descricao}&
+                                                                    ano=${livro.ano}&
+                                                                    qtdExemplares=${livro.qtdExemplares}&
+                                                                    statusLivro=${livro.statusLivro}&
+                                                                    categoria=${livro.categoria}">
+                        Alterar</a></td>
+
+                    <td align="center"><a href="sistema?logica=DeletaLivro&id=${livro.id}">Deletar</a></td>
+                </tr>
+                </tbody>
+            </c:forEach>
+        </table>
+    </div>
+    <form action="adiciona-livro.jsp" method="post">
+        <button id="btnAdd" type="submit" class="btn btn-success">Add outro Livro</button>
+    </form>
+    <form action="menu.jsp" method="post">
+        <button id="btnMenu" type="submit" class="btn btn-dark btn">Menu</button>
+    </form>
 </div>
-
-<form action="adicionar.jsp" method="post">
-    <input type="submit" value="Add outro Compromisso" />
-</form>
-
 </body>
-<c:import url="/rodape.jsp" />
+<c:import url="../../rodape.jsp"/>
 </html>

@@ -29,7 +29,7 @@ public class AutenticaUsuarioLogica implements Logica {
             response.sendRedirect("/sistema?logica=ListaCategoria");
         }else{
             request.setAttribute("msgUser", "Login ou Senha Inválidos");
-            response.sendRedirect("login.jsp");
+            response.sendRedirect("login.html");
         }
     }
 }
