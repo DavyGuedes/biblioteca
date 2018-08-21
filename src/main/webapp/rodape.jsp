@@ -20,7 +20,7 @@
 
                 <div class="col-md-2 text-center">
 
-                    <a href="http://www.uece.br/uece/" target="_blank" ><img class="logotipo" src="images/uece-logo.jpg" alt="LogotipoUece"></a>
+                    <a href="http://www.uece.br/uece/" target="_blank" ><img class="logotipo" src="/images/uece-logo.jpg" alt="LogotipoUece"></a>
 
                 </div>
 
@@ -55,7 +55,7 @@
                 </div>
                 <div class="col-md-2 text-center">
 
-                    <a href="https://gesad.github.io/" target="_blank" > <img class="logotipoGesad"  src="images/gesad-logo.jpg" alt="LogotipoGesad"></a>
+                    <a href="https://gesad.github.io/" target="_blank" > <img class="logotipoGesad"  src="/images/gesad-logo.jpg" alt="LogotipoGesad"></a>
 
                 </div>
 
