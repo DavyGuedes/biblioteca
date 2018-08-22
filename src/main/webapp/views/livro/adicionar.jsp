@@ -39,26 +39,43 @@
 
             <div class=" wrap-input100 validate-input" data-validate="Volume necessário">
                 <label class="label-input100" for="volume">VOLUME</label>
-                <input id="volume" class="input100" name="volume" type="number" placeholder="Volume do livro..." required="required"/>
+                <input id="volume" class="input100" name="volume" type="number" placeholder="Volume do livro..."
+                       required="required"/>
                 <span class="focus-input100"></span>
             </div>
 
             <div class="wrap-input100 validate-input" data-validate="Quantidade de exemplares necessária">
                 <label class="label-input100" for="volume">EXEMPLARES</label>
-                <input id="qtd_exemplares" class="input100" name="qtd_exemplares" type="number" placeholder="Quantidade de livros..."
+                <input id="qtd_exemplares" class="input100" name="qtd_exemplares" type="number"
+                       placeholder="Quantidade de livros..."
                        required="required"/>
                 <span class="focus-input100"></span>
             </div>
 
-            <div class="wrap-input100 validate-input" data-validate="Categoria necessária">
-                <label class="label-input100" for="select">CATEGORIA</label>
-                <select class="form-control" name="categoria" id="select">
-                    <c:forEach items="${categorias}" var="item">
-                        <option value="${item.id}">${item.nome}</option>
-                    </c:forEach>
-                </select>
-                <span class="focus-input100"></span>
-            </div>
+            <c:choose>
+                <c:when test="${empty categorias}">
+                    <div class="wrap-input100 validate-input" data-validate="Categoria necessária">
+                        <label class="label-input100" for="select">CATEGORIA</label>
+                        <div class="">
+                            <a href="/views/categoria/adicionar.jsp" class="d-flex justify-content-center btn btn-warning">Cadastre uma categoria</a>
+                        </div>
+                        <span class="focus-input100"></span>
+                    </div>
+
+                </c:when>
+                <c:when test="${not empty categorias }">
+                    <div class="wrap-input100 validate-input" data-validate="Categoria necessária">
+                        <label class="label-input100" for="select">CATEGORIA</label>
+                        <select class="form-control" name="categoria" id="select">
+                            <c:forEach items="${categorias}" var="item">
+                                <option value="${item.id}">${item.nome}</option>
+                            </c:forEach>
+                        </select>
+                        <span class="focus-input100"></span>
+                    </div>
+                </c:when>
+
+            </c:choose>
 
 
             <div class="wrap-input100 validate-input" data-validate="Message is required">
