@@ -106,6 +106,27 @@ public class LivroDao implements GenericDao<Livro> {
         return livros;
     }
 
+    public List<Livro> findByTittle(String titulo){
+        List<Livro> livros = new ArrayList<>();
+        try {
+            PreparedStatement ps = connection.prepareStatement("select * from livro where upper(titulo) like upper(?)");
+            ps.setString(1, "%"+titulo+"%");
+            ResultSet rs = null;
+            rs = ps.executeQuery();
+            Livro livro;
+            while (rs.next()) {
+                livro = getLivro(rs);
+                livros.add(livro);
+            }
+            rs.close();
+            ps.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return new ArrayList<Livro>();
+        }
+        return livros;
+    }
+
     private Livro getLivro(ResultSet rs) throws SQLException {
         CategoriaDao categoriaDao = new CategoriaDao(connection);
 
