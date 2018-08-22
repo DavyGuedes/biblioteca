@@ -6,43 +6,51 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@include file="/imports.jsp" %>
 <%@ page isELIgnored="false" %>
+<%@include file="/imports.jsp" %>
 <html>
 <head>
-    <title>Lista Compromisso</title>
-    <c:import url="/cabecalho.jsp" />
+    <title> Lista de Categorias</title>
+    <c:import url="/cabecalho.jsp"/>
+
 </head>
 
 <body>
-<div class="container">
-
-    <p><h2>Lista de Categorias</h2></p>
-
-    <form action="/views/categoria/adicionar.jsp" method="post">
-        <div id="listaCategorias">
-            <table class="table-responsive card-list-table">
-                <tr class="titulo-lista">
-                    <th>ID</th>
-                    <th>NOME</th>
-                    <th colspan="2"></th>
+<div style="background-image: url('../../images/img-02.jpg');">
+    <br>
+    <p>
+    <h1 align="center" id="titulo"><b>Lista de Categorias</b></h1></p>
+    <div id="Lista de Categorias" class="container">
+        <table class="table table-hover" align="center" border="1">
+            <thead>
+            <tr id="atributos" class="lista-categorias">
+                <td align="center">ID</td>
+                <td align="center">NOME</td>
+                <td align="center">AÇÕES</td>
+            </tr>
+            </thead>
+            <c:forEach var="categoria" items="${categorias}">
+                <tbody>
+                <tr id="itens">
+                    <td align="center">${categoria.id}</td>
+                    <td align="center">${categoria.nome}</td>
+                    <td align="center">
+                        <a class="btn btn-success"
+                           href="/views/categoria/alterar.jsp?id=${categoria.id}&nome=${categoria.nome}"">Alterar</a>
+                        <a class="btn btn-danger" href="sistema?logica=DeletaCategoria&id=${categoria.id}">Deletar</a>
+                    </td>
                 </tr>
-
-                <c:forEach var="item" items="${categorias}">
-                    <tr>
-                        <td>${item.id}</td>
-                        <td>${item.nome}</td>
-                        <td><a href="/views/categoria/alterar.jsp?id=${item.id}&nome=${item.nome}">Alterar</a></td>
-
-                        <td><a href="sistema?logica=DeletaCategoria&id=${item.id}">Deletar</a></td>
-                    </tr>
-                </c:forEach>
-            </table>
-        </div>
-        <input type="submit" value="Add outro Compromisso" />
+                </tbody>
+            </c:forEach>
+        </table>
+    </div>
+    <form action="/views/categoria/adicionar.jsp" method="post">
+        <button id="btnAdd" type="submit" class="btn btn-success">Add outro</button>
+    </form>
+    <form action="menu.jsp" method="post">
+        <button id="btnMenu" type="submit" class="btn btn-dark btn">Menu</button>
     </form>
 </div>
-
 </body>
-<c:import url="/rodape.jsp" />
+<c:import url="/rodape.jsp"/>
 </html>

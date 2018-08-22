@@ -11,36 +11,35 @@
 <html>
 <head>
     <title>Categoria</title>
-    <c:import url="/cabecalho.jsp" />
+    <c:import url="/cabecalho.jsp"/>
 </head>
 <body>
+<div style="background-image: url('/images/img-02.jpg');">
+    <div id="add">
+        <br>
+        <span class="contact100-form-title"> CADASTRAR CATEGORIA </span>
+        <!--<h2>Livro</h2> -->
+        <form action="/sistema" method="post" id="formAddCategoria">
+            <input type="hidden" name="logica" value="AdicionaCategoria"/>
 
-<hr>
-Usuário logado: ${userLogado.nome}
-<hr>
+            <div class="wrap-input100 validate-input" data-validate="Nome necessário">
+                <label class="label-input100" for="titulo">Nome</label>
+                <input id="titulo" class="input100" type="text" name="nome" placeholder="Entre com o nome..."
+                       required="required"/>
+                <span class="focus-input100"></span>
+            </div>
 
-<div id="add">
-    <h2>Categoria</h2>
-    <form action="/sistema" method="post" class="form-horizontal">
-        <input type="hidden" name="logica" value="AdicionaCategoria" />
-            <fieldset>
-                <div class="form-group">
-                    <label for="inputNome" class="col-lg-2 control-label">Nome</label>
-                    <div class="col-lg-10">
-                        <input type="text" name="nome" class="form-control" id="inputNome" placeholder="título" />
-                    </div>
-                </div>
-            </fieldset>
-        <input type="submit" value="Enviar"/> <br>
-    </form>
+
+            <div class="container-contact100-form-btn">
+                <input type="submit" value="Cadastrar" class="contact100-form-btn">
+            </div>
+        </form>
+    </div>
+    <br>
+    <br>
 </div>
 </body>
 <footer>
-    <c:import url="/rodape.jsp" />
+    <c:import url="/rodape.jsp"/>
 </footer>
-
-<script src="js/jquery-2.1.0.js"></script>
-<script src="js/jquery.inputmask.bundle.min.js"></script>
-<script src="js/jquery.validate.min.js"></script>
-<script src="js/mascara-validacoes.js"></script>
 </html>

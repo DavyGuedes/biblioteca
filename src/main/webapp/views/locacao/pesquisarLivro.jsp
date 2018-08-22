@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
-  User: davyg
-  Date: 18/08/2018
-  Time: 15:48
+  User: Marcos Davy Guedes Dias
+  Date: 22/08/2018
+  Time: 14:02
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -10,21 +10,27 @@
 <%@include file="/imports.jsp" %>
 <html>
 <head>
-    <title> Lista de Livros</title>
+    <title> Pesquisar de Livros</title>
     <c:import url="/cabecalho.jsp"/>
 
-</head>
-
 <body>
-<div style="background-image: url('../../images/img-02.jpg');">
-    <br>
-    <p>
-    <%--<h1 align="center"  id="titulo"><b>Lista de Livros</b></h1></p>--%>
-    <div class="container-login100-form-btn p-t-10">
-        <h1 id="titulo" class="login100-form-btn">Lista de Livros</h1>
-    </div>
-
-    <div id="Lista de Livros" class="container">
+<div style="background-image: url('/images/img-02.jpg');">
+    <div class="container p-5">
+        <div class="p-5">
+            <span class="contact100-form-title"> PESQUISAR LIVRO - LOCAÇÃO </span>
+            <!--<h2>Livro</h2> -->
+            <form action="/sistema" method="post">
+                <input type="hidden" name="logica" value="PesquisarLivroLocacao"/>
+                <div class="wrap-input100 validate-input" data-validate="Titulo necessário">
+                    <label class="label-input100" for="titulo">TÍTULO</label>
+                    <input id="titulo" class="input100" type="text" name="titulo" placeholder="Entre com o título..."/>
+                    <span class="focus-input100"></span>
+                </div>
+                <div class="container-contact100-form-btn">
+                    <input type="submit" value="Buscar" class="contact100-form-btn">
+                </div>
+            </form>
+        </div>
         <table class="table table-hover" align="center" border="1">
             <thead>
             <tr id="atributos" class="lista-livros">
@@ -49,21 +55,16 @@
                     <td align="center">${livro.statusLivro}</td>
                     <td align="center">${livro.categoria.nome}</td>
                     <td align="center">
-                        <a class="btn btn-success" href="sistema?logica=PrepareAlteraLivro&id=${livro.id}">Alterar</a>
-                        <a class="btn btn-danger" href="sistema?logica=DeletaLivro&id=${livro.id}">Deletar</a>
+                        <a class="btn btn-success" href="#">Locar</a>
                     </td>
                 </tr>
                 </tbody>
             </c:forEach>
         </table>
     </div>
-    <form action="sistema?logica=PrepareAddLivro" method="post">
-        <button id="btnAdd" type="submit" class="btn btn-success">Add outro Livro</button>
-    </form>
-    <form action="menu.jsp" method="post">
-        <button id="btnMenu" type="submit" class="btn btn-dark btn">Menu</button>
-    </form>
 </div>
+<footer>
+    <c:import url="/rodape.jsp"/>
+</footer>
 </body>
-<c:import url="/rodape.jsp"/>
 </html>

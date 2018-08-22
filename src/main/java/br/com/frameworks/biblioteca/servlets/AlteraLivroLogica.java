@@ -18,17 +18,28 @@ public class AlteraLivroLogica implements Logica {
         LivroDao livroDao = new LivroDao(connection);
         CategoriaDao categoriaDao = new CategoriaDao(connection);
 
-        Long idLivro = Long.parseLong(request.getParameter("id"));
-        String titulo = request.getParameter("titulo");
-        String autor = request.getParameter("autor");
-        Integer volume = Integer.parseInt(request.getParameter("volume"));
-        String ano = request.getParameter("ano");
-        String descricao = request.getParameter("descricao");
-        Integer qtdExemplares = Integer.parseInt(request.getParameter("qtd_exemplares"));
-        StatusLivro statusLivro = StatusLivro.valueOf(request.getParameter("status_livro"));
+        String idLivro = request.getParameter("id") != null ? request.getParameter("id") : "";
+        if (idLivro.equals("")) {
+            throw new Exception();
+        }
+
+        String titulo = request.getParameter("titulo") != null ? request.getParameter("titulo") : "";
+        String autor = request.getParameter("autor") != null ? request.getParameter("autor") : "";
+        Integer volume = Integer.parseInt(request.getParameter("volume") != null ? request.getParameter("volume") : "0");
+        String ano = request.getParameter("ano") != null ? request.getParameter("ano") : "";
+        String descricao = request.getParameter("descricao") != null ? request.getParameter("descricao") : "";
+        Integer qtdExemplares = Integer.parseInt(request.getParameter("qtd_exemplares") != null ? request.getParameter("qtd_exemplares") : "0");
+
+        StatusLivro statusLivro;
+        if (qtdExemplares > 0) {
+            statusLivro = StatusLivro.DISPONIVEL;
+        } else {
+            statusLivro = StatusLivro.INDISPONIVEL;
+        }
+
         Long categoria = Long.parseLong(request.getParameter("categoria"));
 
-        Livro livro = livroDao.getEntity(idLivro);
+        Livro livro = livroDao.getEntity(Long.parseLong(idLivro));
         livro.setTitulo(titulo);
         livro.setAno(autor);
         livro.setVolume(volume);

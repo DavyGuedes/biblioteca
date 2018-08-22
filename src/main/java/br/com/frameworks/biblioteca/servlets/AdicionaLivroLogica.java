@@ -19,13 +19,20 @@ public class AdicionaLivroLogica implements Logica {
 
         Livro livro;
 
-        String titulo = request.getParameter("titulo");
-        String autor = request.getParameter("autor");
-        Integer volume = Integer.parseInt(request.getParameter("volume"));
-        String ano = request.getParameter("ano");
-        String descricao = request.getParameter("descricao");
-        Integer qtdExemplares = Integer.parseInt(request.getParameter("qtd_exemplares"));
-        StatusLivro statusLivro = StatusLivro.valueOf(request.getParameter("status_livro"));
+        String titulo = request.getParameter("titulo") != null ? request.getParameter("titulo") : "";
+        String autor = request.getParameter("autor") != null ? request.getParameter("autor") : "";
+        Integer volume = Integer.parseInt(request.getParameter("volume") != null ? request.getParameter("volume") : "0");
+        String ano = request.getParameter("ano") != null ? request.getParameter("ano") : "";
+        String descricao = request.getParameter("descricao") != null ? request.getParameter("descricao") : "";
+        Integer qtdExemplares = Integer.parseInt(request.getParameter("qtd_exemplares") != null ? request.getParameter("qtd_exemplares") : "0");
+
+        StatusLivro statusLivro;
+        if(qtdExemplares > 0){
+            statusLivro = StatusLivro.DISPONIVEL;
+        }else{
+            statusLivro = StatusLivro.INDISPONIVEL;
+        }
+
         Long idCategoria = Long.parseLong(request.getParameter("categoria"));
 
         CategoriaDao categoriaDao = new CategoriaDao(connection);

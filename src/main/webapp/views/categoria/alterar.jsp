@@ -11,34 +11,36 @@
 <html>
 <head>
     <title>Categoria</title>
-    <c:import url="/cabecalho.jsp" />
+    <c:import url="/cabecalho.jsp"/>
 </head>
 <body>
-
-<hr>
-Usuário logado: ${userLogado.nome}
-<hr>
-
-<div id="add">
-    <h2>Compromisso</h2>
-    <form action="/sistema" method="post" class="form-horizontal">
-        <input type="hidden" name="logica" value="AlteraCategoria" />
+<div style="background-image: url('/images/img-02.jpg');">
+    <div id="add">
+        <br>
+        <span class="contact100-form-title"> ALTERAR CATEGORIA </span>
+        <!--<h2>Livro</h2> -->
+        <form action="/sistema" method="post" id="formAddCategoria">
+            <input type="hidden" name="logica" value="AlteraCategoria"/>
             <input type="hidden" name="id" value="${param.id}"/>
-            <fieldset>
-                <!--<legend>Legend</legend>-->
-                <div class="form-group">
-                    <label for="inputNome" class="col-lg-2 control-label">Nome</label>
-                    <div class="col-lg-10">
-                        <input type="text"  name="nome" class="form-control" id="inputNome" placeholder="Nome da Categoria" value="${param.nome}">
-                    </div>
-                </div>
-            </fieldset>
-        <input type="submit" value="Enviar"/> <br>
-    </form>
+
+            <div class="wrap-input100 validate-input" data-validate="Titulo necessário">
+                <label class="label-input100" for="titulo">TÍTULO</label>
+                <input id="titulo" class="input100" type="text" name="nome" placeholder="Entre com o nome..."
+                       required="required" value="${param.nome}"/>
+                <span class="focus-input100"></span>
+            </div>
+
+
+            <div class="container-contact100-form-btn">
+                <input type="submit" value="Cadastrar" class="contact100-form-btn">
+            </div>
+        </form>
+    </div>
+    <br>
+    <br>
 </div>
 </body>
 <footer>
-    <c:import url="/rodape.jsp" />
+    <c:import url="/rodape.jsp"/>
 </footer>
-
-<script src="<c:url value='/js/jquery-3.3.1.min.js'/>"></script>
+</html>

@@ -27,6 +27,7 @@ public class SistemaBiblioteca extends HttpServlet {
             logica.executa(request, response);
 
         } catch (Exception e) {
+            e.printStackTrace();
             throw new BibliotecaException(e.getMessage());
 
         }
