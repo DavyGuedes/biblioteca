@@ -31,6 +31,7 @@
                 <td align="center">EXEMPLARES</td>
                 <td align="center">SITUAÇÃO DO LIVRO</td>
                 <td align="center">CATEGORIA</td>
+                <td align="center">AÇÕES</td>
             </tr>
             </thead>
             <c:forEach var="livro" items="${livros}">
@@ -43,22 +44,16 @@
                     <td align="center">${livro.qtdExemplares}</td>
                     <td align="center">${livro.statusLivro}</td>
                     <td align="center">${livro.categoria.nome}</td>
-                    <td align="center"><a href="alterar.jsp?id=${livro.id}&
-                                                                    titulo=${livro.titulo}&
-                                                                    autor=${livro.descricao}&
-                                                                    ano=${livro.ano}&
-                                                                    qtdExemplares=${livro.qtdExemplares}&
-                                                                    statusLivro=${livro.statusLivro}&
-                                                                    categoria=${livro.categoria}">
-                        Alterar</a></td>
-
-                    <td align="center"><a href="sistema?logica=DeletaLivro&id=${livro.id}">Deletar</a></td>
+                    <td align="center">
+                        <a class="btn btn-success" href="sistema?logica=PrepareAlteraLivro&id=${livro.id}">Alterar</a>
+                        <a class="btn btn-danger" href="sistema?logica=DeletaLivro&id=${livro.id}">Deletar</a>
+                    </td>
                 </tr>
                 </tbody>
             </c:forEach>
         </table>
     </div>
-    <form action="/views/livro/adicionar.jsp" method="post">
+    <form action="sistema?logica=PrepareAddLivro" method="post">
         <button id="btnAdd" type="submit" class="btn btn-success">Add outro Livro</button>
     </form>
     <form action="menu.jsp" method="post">

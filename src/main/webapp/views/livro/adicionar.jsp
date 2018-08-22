@@ -1,76 +1,89 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Marcos Davy Guedes Dias
-  Date: 18/08/2018
-  Time: 15:29
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@include file="/imports.jsp" %>
+<%@ page isELIgnored="false" %>
 <%@include file="/imports.jsp" %>
 <html>
 <head>
-    <title>Compromissos</title>
-    <c:import url="../../cabecalho.jsp" />
+    <title>Livro</title>
+    <c:import url="/cabecalho.jsp"/>
 </head>
 <body>
+<div style="background-image: url('../../images/img-02.jpg');">
+    <div id="add">
+        <br>
+        <span class="contact100-form-title"> CADASTRAR LIVRO </span>
+        <!--<h2>Livro</h2> -->
+        <form action="sistema" method="post" id="formAddLivro">
+            <input type="hidden" name="logica" value="AdicionaLivro"/>
 
-<hr>
-Usuário logado: ${userLogado.nome}
-<hr>
+            <div class="wrap-input100 validate-input" data-validate="Titulo necessário">
+                <label class="label-input100" for="titulo">TÍTULO</label>
+                <input id="titulo" class="input100" type="text" name="titulo" placeholder="Entre com o título..."
+                       required="required"/>
+                <span class="focus-input100"></span>
+            </div>
 
-<div id="add">
-    <h2>Compromisso</h2>
-    <form action="sistema" method="post" class="form-horizontal">
-        <input type="hidden" name="logica" value="AdicionaLivro" />
-            <fieldset>
-                <!--<legend>Legend</legend>-->
-                <div class="form-group">
-                    <label for="inputTitulo" class="col-lg-2 control-label">Título</label>
-                    <div class="col-lg-10">
-                        <input type="text" name="titulo" class="form-control" id="inputTitulo" placeholder="título" value="${livro.nome}">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="inputAutor" class="col-lg-2 control-label">Autor</label>
-                    <div class="col-lg-10">
-                        <input type="text" name="autor" class="form-control" id="inputAutor" placeholder="autor">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="inputAno" class="col-lg-2 control-label">Ano</label>
-                    <div class="col-lg-10">
-                        <input type="text" name="ano" class="form-control" id="inputAno" placeholder="ano">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="select" class="col-lg-2 control-label">Categoria</label>
-                    <div class="col-lg-10">
-                        <select class="form-control" name="categoria" id="select">
-                            <c:forEach items="categorias" var="item">
-                                <option value="${item.id}">${item.nome}</option>
-                            </c:forEach>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="textArea" class="col-lg-2 control-label">Descrição</label>
-                    <div class="col-lg-10">
-                        <textarea class="form-control" name="descricao" rows="5" id="textArea"></textarea>
-                        <span class="help-block"></span>
-                    </div>
-                </div>
-            </fieldset>
-        <input type="submit" value="Enviar"/> <br>
+
+            <div class="wrap-input100 validate-input" data-validate="Nome do autor necessário">
+                <label class="label-input100" for="autor">AUTOR</label>
+                <input id="autor" class="input100" type="text" name="autor" placeholder="Nome do autor..."
+                       required="required"/>
+                <span class="focus-input100"></span>
+            </div>
+
+            <div class="wrap-input100 validate-input" data-validate="Ano necessário">
+                <label class="label-input100" for="ano">ANO</label>
+                <input id="ano" class="input100" type="number" name="ano" placeholder="Entre com o ano..."
+                       required="required"/>
+                <span class="focus-input100"></span>
+            </div>
+
+            <div class=" wrap-input100 validate-input" data-validate="Volume necessário">
+                <label class="label-input100" for="volume">VOLUME</label>
+                <input id="volume" class="input100" name="volume" type="number" placeholder="Volume do livro..." required="required"/>
+                <span class="focus-input100"></span>
+            </div>
+
+            <div class="wrap-input100 validate-input" data-validate="Quantidade de exemplares necessária">
+                <label class="label-input100" for="volume">EXEMPLARES</label>
+                <input id="qtd_exemplares" class="input100" name="qtd_exemplares" type="number" placeholder="Quantidade de livros..."
+                       required="required"/>
+                <span class="focus-input100"></span>
+            </div>
+
+            <div class="wrap-input100 validate-input" data-validate="Categoria necessária">
+                <label class="label-input100" for="select">CATEGORIA</label>
+                <select class="form-control" name="categoria" id="select">
+                    <c:forEach items="${categorias}" var="item">
+                        <option value="${item.id}">${item.nome}</option>
+                    </c:forEach>
+                </select>
+                <span class="focus-input100"></span>
+            </div>
+
+
+            <div class="wrap-input100 validate-input" data-validate="Message is required">
+                <label class="label-input100" for="descricao">DESCRIÇÃO</label>
+                <textarea id="descricao" class="input100" name="descricao"
+                          placeholder="Entre com a descrição..."></textarea>
+                <span class="focus-input100"></span>
+            </div>
+            <!-- <input type="submit" value="Enviar"/> -->
+            <div class="container-contact100-form-btn">
+                <input type="submit" value="Cadastrar" class="contact100-form-btn">
+            </div>
+        </form>
+    </div>
+    <br>
+    <form action="menu.jsp" method="post">
+        <div class="container-contact100-form-btn">
+            <input type="submit" value="Menu" class="contact100-form-btn">
+        </div>
+        <!-- <input type="submit" value="Menu"/> -->
     </form>
+    <br>
 </div>
 </body>
 <footer>
-    <c:import url="../../rodape.jsp" />
+    <c:import url="/rodape.jsp"/>
 </footer>
-
-<script src="js/jquery-2.1.0.js"></script>
-<script src="js/jquery.inputmask.bundle.min.js"></script>
-<script src="js/jquery.validate.min.js"></script>
-<script src="js/mascara-validacoes.js"></script>
 </html>

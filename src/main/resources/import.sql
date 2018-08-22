@@ -46,7 +46,7 @@ CREATE TABLE public.livro
     titulo character varying COLLATE pg_catalog."default" NOT NULL,
     autor character varying COLLATE pg_catalog."default",
     volume bigint,
-    ano bit varying,
+    ano character varying COLLATE pg_catalog."default",
     qtd_exemplares bigint,
     status_livro character varying COLLATE pg_catalog."default",
     categoria_id bigint,
