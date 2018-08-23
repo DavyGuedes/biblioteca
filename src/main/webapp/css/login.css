@@ -1,8 +1,8 @@
 #nomeSistema{
-  width: 40%;
-  height: 110px;
-  font-size: 60px;
-  margin-top: 8%;
+
+  height: 14%;
+  font-size: 5em;
+  margin-top: 2%;
   position: absolute;
 
   display: -webkit-box;
@@ -13,11 +13,7 @@
   flex-wrap: wrap;
   justify-content: center;
 
-  background: #005bea;
-  background: -webkit-linear-gradient(left, #005bea, #00c6fb);
-  background: -o-linear-gradient(left, #005bea, #00c6fb);
-  background: -moz-linear-gradient(left, #005bea, #00c6fb);
-  background: linear-gradient(left, #005bea, #00c6fb);
+
 }
 
 
