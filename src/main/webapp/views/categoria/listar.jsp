@@ -16,10 +16,14 @@
 </head>
 
 <body>
-<div style="background-image: url('../../images/img-02.jpg');">
+<div class="container-fundo" style="background-image: url('../../images/img-02.jpg');">
     <br>
     <p>
-    <h1 align="center" id="titulo"><b>Lista de Categorias</b></h1></p>
+    <%--<h1 align="center" id="titulo"><b>Lista de Categorias</b></h1></p>--%>
+
+    <div class="container-login100-form-btn p-t-10">
+        <h1 id="tituloCadastrarLivro" class="login100-form-btn">LISTA DE CATEGORIAS</h1>
+    </div>
     <div id="Lista de Categorias" class="container">
         <table class="table table-hover" align="center" border="1">
             <thead>
@@ -45,10 +49,13 @@
         </table>
     </div>
     <form action="/views/categoria/adicionar.jsp" method="post">
-        <button id="btnAdd" type="submit" class="btn btn-success">Add outro</button>
+        <%--<button id="btnAdd" type="submit" class="btn btn-success">Add outro</button>--%>
+            <button id="btnCadastrar" class="login100-form-btn"  type="submit">Cadastrar Categoria</button>
     </form>
+    <br>
     <form action="/sistema?logica=Menu" method="post">
-        <button id="btnMenu" type="submit" class="btn btn-dark btn">Menu</button>
+        <%--<button id="btnMenu" type="submit" class="btn btn-dark btn">Menu</button>--%>
+        <button id="btnMenu" class="login100-form-btn" type="submit">Menu</button>
     </form>
 </div>
 </body>

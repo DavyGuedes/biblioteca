@@ -35,7 +35,7 @@
                         <td align="center">AUTOR</td>
                         <td align="center">ANO</td>
                         <td align="center">EXEMPLARES</td>
-                        <td align="center">SITUAÇÃO DO LIVRO</td>
+                        <td align="center">SITUAÇÃO</td>
                         <td align="center">CATEGORIA</td>
                         <td align="center">AÇÕES</td>
                     </tr>
