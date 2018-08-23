@@ -11,9 +11,6 @@
     <div id="add">
         <br>
 
-        <%--<div class="container-login100-form-btn p-t-10">--%>
-            <%--<h1 id="titulo" class="login100-form-btn">CADASTRAR LIVRO</h1>--%>
-        <%--</div>--%>
         <div class="container-login100-form-btn p-t-10">
             <h1 id="tituloCadastrarLivro" class="login100-form-btn">CADASTRAR LIVRO</h1>
         </div>
