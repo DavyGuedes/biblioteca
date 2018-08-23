@@ -93,7 +93,7 @@ public class LocacaoDao implements GenericDao<Locacao> {
         List<Locacao> locacaoList = new ArrayList<>();
         Locacao locacao;
 
-        while (rs.next()){
+        while (rs.next()) {
             locacao = getLocacao(rs);
             locacaoList.add(locacao);
         }

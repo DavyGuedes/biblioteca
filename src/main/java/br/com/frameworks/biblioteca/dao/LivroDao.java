@@ -14,9 +14,11 @@ import java.util.List;
 public class LivroDao implements GenericDao<Livro> {
 
     private Connection connection;
+    CategoriaDao categoriaDao;
 
     public LivroDao(Connection connection) {
         this.connection = connection;
+        categoriaDao = new CategoriaDao(connection);
     }
 
     @Override
@@ -128,8 +130,6 @@ public class LivroDao implements GenericDao<Livro> {
     }
 
     private Livro getLivro(ResultSet rs) throws SQLException {
-        CategoriaDao categoriaDao = new CategoriaDao(connection);
-
         Long idLivro = rs.getLong("id");
         String titulo = rs.getString("titulo");
         String autor = rs.getString("autor");
