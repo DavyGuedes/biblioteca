@@ -7,17 +7,20 @@
     <c:import url="/cabecalho.jsp"/>
 </head>
 <body>
-<div style="background-image: url('../../images/img-02.jpg');">
+<div class="container-fundo" style="background-image: url('../../images/img-02.jpg');">
     <div id="add">
         <br>
-        <span class="contact100-form-title"> CADASTRAR LIVRO </span>
-        <!--<h2>Livro</h2> -->
+        <%--<span class="contact100-form-title"> CADASTRAR LIVRO </span>--%>
+        <div class="container-login100-form-btn p-t-10">
+            <h1 id="titulo" class="login100-form-btn">CADASTRAR LIVRO</h1>
+        </div>
+
         <form action="sistema" method="post" id="formAddLivro">
             <input type="hidden" name="logica" value="AdicionaLivro"/>
 
             <div class="wrap-input100 validate-input" data-validate="Titulo necessário">
                 <label class="label-input100" for="titulo">TÍTULO</label>
-                <input id="titulo" class="input100" type="text" name="titulo" placeholder="Entre com o título..."
+                <input id="tituloLivro" class="input100" type="text" name="titulo" placeholder="Entre com o título..."
                        required="required"/>
                 <span class="focus-input100"></span>
             </div>
@@ -53,27 +56,28 @@
             </div>
 
             <c:choose>
-                <c:when test="${empty categorias}">
-                    <div class="wrap-input100 validate-input" data-validate="Categoria necessária">
-                        <label class="label-input100" for="select">CATEGORIA</label>
-                        <div class="">
-                            <a href="/views/categoria/adicionar.jsp" class="d-flex justify-content-center btn btn-warning">Cadastre uma categoria</a>
-                        </div>
-                        <span class="focus-input100"></span>
-                    </div>
+            <c:when test="${empty categorias}">
+            <div class="wrap-input100 validate-input" data-validate="Categoria necessária">
+                <label class="label-input100" for="select">CATEGORIA</label>
+                <div class="">
+                    <a href="/views/categoria/adicionar.jsp" class="d-flex justify-content-center btn btn-warning">Cadastre
+                        uma categoria</a>
+                </div>
+                <span class="focus-input100"></span>
+            </div>
 
-                </c:when>
-                <c:when test="${not empty categorias }">
-                    <div class="wrap-input100 validate-input" data-validate="Categoria necessária">
-                        <label class="label-input100" for="select">CATEGORIA</label>
-                        <select class="form-control" name="categoria" id="select">
-                            <c:forEach items="${categorias}" var="item">
-                                <option value="${item.id}">${item.nome}</option>
-                            </c:forEach>
-                        </select>
-                        <span class="focus-input100"></span>
-                    </div>
-                </c:when>
+            </c:when>
+            <c:when test="${not empty categorias }">
+            <div class="wrap-input100 validate-input" data-validate="Categoria necessária">
+                <label class="label-input100" for="select">CATEGORIA</label>
+                <select class="form-control" name="categoria" id="select">
+                    <c:forEach items="${categorias}" var="item">
+                        <option value="${item.id}">${item.nome}</option>
+                    </c:forEach>
+                </select>
+                <span class="focus-input100"></span>
+            </div>
+            </c:when>
 
             </c:choose>
 
@@ -85,17 +89,20 @@
                 <span class="focus-input100"></span>
             </div>
             <!-- <input type="submit" value="Enviar"/> -->
-            <div class="container-contact100-form-btn">
-                <input type="submit" value="Cadastrar" class="contact100-form-btn">
-            </div>
-        </form>
+            <%--<div class="container-contact100-form-btn">--%>
+            <%--<input type="submit" value="Cadastrar" class="contact100-form-btn">--%>
+            <%--</div>--%>
+
+            <button id="btnCadastrar" class="login100-form-btn"  type="submit">Cadastrar</button>
     </div>
     <br>
+
+
+    <%--<div class="container-contact100-form-btn">--%>
+    <%--<input class="login100-form-btn" type="submit" value="Menu" class="contact100-form-btn">--%>
+    <%--</div>--%>
     <form action="/sistema?logica=Menu" method="post">
-        <div class="container-contact100-form-btn">
-            <input type="submit" value="Menu" class="contact100-form-btn">
-        </div>
-        <!-- <input type="submit" value="Menu"/> -->
+        <button id="btnMenu" class="login100-form-btn" type="submit">Menu</button>
     </form>
     <br>
 </div>
