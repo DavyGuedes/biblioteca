@@ -91,7 +91,7 @@
         </form>
     </div>
     <br>
-    <form action="menu.jsp" method="post">
+    <form action="/sistema?logica=Menu" method="post">
         <div class="container-contact100-form-btn">
             <input type="submit" value="Menu" class="contact100-form-btn">
         </div>

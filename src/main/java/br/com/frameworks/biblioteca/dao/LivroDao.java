@@ -108,23 +108,30 @@ public class LivroDao implements GenericDao<Livro> {
         return livros;
     }
 
-    public List<Livro> findByTittle(String titulo){
+    public List<Livro> findByTittle(String titulo) {
         List<Livro> livros = new ArrayList<>();
         try {
-            PreparedStatement ps = connection.prepareStatement("select * from livro where upper(titulo) like upper(?)");
-            ps.setString(1, "%"+titulo+"%");
-            ResultSet rs = null;
-            rs = ps.executeQuery();
-            Livro livro;
-            while (rs.next()) {
-                livro = getLivro(rs);
-                livros.add(livro);
+            PreparedStatement ps;
+            String sql;
+            if (titulo.equals("")) {
+                livros = getListEntity();
+            } else {
+                sql = "select * from livro where upper(titulo) like upper(?)";
+                ps = connection.prepareStatement(sql);
+                ps.setString(1, "%" + titulo + "%");
+                ResultSet rs = ps.executeQuery();
+                Livro livro;
+                while (rs.next()) {
+                    livro = getLivro(rs);
+                    livros.add(livro);
+                }
+                rs.close();
+                ps.close();
             }
-            rs.close();
-            ps.close();
+
         } catch (SQLException e) {
             e.printStackTrace();
-            return new ArrayList<Livro>();
+            return new ArrayList<>();
         }
         return livros;
     }

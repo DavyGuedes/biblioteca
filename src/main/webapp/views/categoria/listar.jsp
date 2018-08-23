@@ -36,7 +36,7 @@
                     <td align="center">${categoria.nome}</td>
                     <td align="center">
                         <a class="btn btn-success"
-                           href="/views/categoria/alterar.jsp?id=${categoria.id}&nome=${categoria.nome}"">Alterar</a>
+                           href="/views/categoria/alterar.jsp?id=${categoria.id}&nome=${categoria.nome}">Alterar</a>
                         <a class="btn btn-danger" href="sistema?logica=DeletaCategoria&id=${categoria.id}">Deletar</a>
                     </td>
                 </tr>
@@ -47,7 +47,7 @@
     <form action="/views/categoria/adicionar.jsp" method="post">
         <button id="btnAdd" type="submit" class="btn btn-success">Add outro</button>
     </form>
-    <form action="menu.jsp" method="post">
+    <form action="/sistema?logica=Menu" method="post">
         <button id="btnMenu" type="submit" class="btn btn-dark btn">Menu</button>
     </form>
 </div>

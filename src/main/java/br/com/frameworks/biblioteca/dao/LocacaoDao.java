@@ -119,4 +119,20 @@ public class LocacaoDao implements GenericDao<Locacao> {
 
         return new Locacao(id, usuario, livro, inicio, termino, status);
     }
+
+    public List<Locacao> findByUsuario(Usuario usuario) throws SQLException {
+        String sql = "select * from locacao where usuario_id = ?";
+        PreparedStatement ps = connection.prepareStatement(sql);
+        ps.setLong(1, usuario.getId());
+        ResultSet rs = ps.executeQuery();
+        List<Locacao> list = new ArrayList<>();
+        Locacao locacao;
+        while(rs.next()){
+            locacao = getLocacao(rs);
+            list.add(locacao);
+        }
+        rs.close();
+        ps.close();
+        return list;
+    }
 }

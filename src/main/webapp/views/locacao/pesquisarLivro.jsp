@@ -23,7 +23,7 @@
                 <input type="hidden" name="logica" value="PesquisarLivroLocacao"/>
                 <div class="wrap-input100 validate-input" data-validate="Titulo necessário">
                     <label class="label-input100" for="titulo">TÍTULO</label>
-                    <input id="titulo" class="input100" type="text" name="titulo" placeholder="Entre com o título..."/>
+                    <input id="titulo" class="input100" type="text" name="titulo" value="${param.titulo}" placeholder="Entre com o título..."/>
                     <span class="focus-input100"></span>
                 </div>
                 <div class="container-contact100-form-btn">
@@ -55,12 +55,23 @@
                     <td align="center">${livro.statusLivro}</td>
                     <td align="center">${livro.categoria.nome}</td>
                     <td align="center">
-                        <a class="btn btn-success" href="#">Locar</a>
+                        <c:choose>
+                            <c:when test="${livro.qtdExemplares > 0}">
+                                <a class="btn btn-success" href="/sistema?logica=LocarLivro&id=${livro.id}">Locar</a>
+                            </c:when>
+                            <c:otherwise>
+                                <a class="btn btn-danger" href="#" readonly="readonly">Indisponível</a>
+                            </c:otherwise>
+                        </c:choose> 
+                        
                     </td>
                 </tr>
                 </tbody>
             </c:forEach>
         </table>
+        <div class="container-contact100-form-btn">
+            <a class="contact100-form-btn" href="/sistema?logica=Menu">Menu</a>
+        </div>
     </div>
 </div>
 <footer>

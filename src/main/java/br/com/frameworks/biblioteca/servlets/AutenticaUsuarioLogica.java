@@ -1,6 +1,7 @@
 package br.com.frameworks.biblioteca.servlets;
 
 import br.com.frameworks.biblioteca.dao.UsuarioDao;
+import br.com.frameworks.biblioteca.enums.TipoUsuario;
 import br.com.frameworks.biblioteca.model.Usuario;
 
 import javax.servlet.http.HttpServletRequest;
@@ -25,8 +26,8 @@ public class AutenticaUsuarioLogica implements Logica {
             HttpSession session = request.getSession();
             session.setAttribute("userLogado", user);
 
-            /*TODO mandar para a pagina conforme o tipo de usuario*/
-            response.sendRedirect("/menu.jsp");
+
+            response.sendRedirect("/sistema?logica=Menu");
         }else{
             request.setAttribute("msgUser", "Login ou Senha Inválidos");
             response.sendRedirect("login.html");

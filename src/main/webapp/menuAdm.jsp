@@ -10,7 +10,7 @@
 <%@include file="/imports.jsp" %>
 <html>
 <head>
-    <title> Lista de Categorias</title>
+    <title>Menu Adm</title>
     <c:import url="/cabecalho.jsp"/>
 </head>
 <body>
@@ -68,6 +68,9 @@
         </div>
     </div>
 </div>
+<div class="row">
+    <c:import url="/rodape.jsp"/>
+</div>
 </body>
-<c:import url="/rodape.jsp"/>
+
 </html>
