@@ -18,7 +18,8 @@ ALTER TABLE public."usuario"
     OWNER to postgres;
 
 -- Insert data:
-INSERT INTO usuario(id, nome, login, senha, tipo_usuario) values(1, 'administrador', 'admin', 'admin', 'ADMIN');
+INSERT INTO usuario(id, nome, login, senha, tipo_usuario) values (1, 'administrador', 'admin', 'admin', 'ADMIN');
+INSERT INTO usuario(id, nome, login, senha, tipo_usuario) values (2, 'discente', 'aluno', 'aluno', 'ALUNO');
 
 
 -- Table: public.categoria
@@ -64,3 +65,27 @@ TABLESPACE pg_default;
 
 ALTER TABLE public.livro
     OWNER to postgres;
+
+-- Table: public.locacao
+
+CREATE TABLE locacao
+(
+  id serial NOT NULL,
+  usuario_id bigint NOT NULL,
+  livro_id bigint NOT NULL,
+  data_inicio date NOT NULL,
+  data_termino date NOT NULL,
+  status character varying(255) NOT NULL,
+  CONSTRAINT locacao_pkey PRIMARY KEY (id),
+  CONSTRAINT locacao_livro_id_fkey FOREIGN KEY (livro_id)
+      REFERENCES livro (id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT locacao_usuario_id_fkey FOREIGN KEY (usuario_id)
+      REFERENCES usuario (id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE locacao
+  OWNER TO postgres;
