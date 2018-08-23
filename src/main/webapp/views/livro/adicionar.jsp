@@ -94,13 +94,9 @@
             <%--</div>--%>
 
             <button id="btnCadastrar" class="login100-form-btn"  type="submit">Cadastrar</button>
+        </form>
     </div>
     <br>
-
-
-    <%--<div class="container-contact100-form-btn">--%>
-    <%--<input class="login100-form-btn" type="submit" value="Menu" class="contact100-form-btn">--%>
-    <%--</div>--%>
     <form action="/sistema?logica=Menu" method="post">
         <button id="btnMenu" class="login100-form-btn" type="submit">Menu</button>
     </form>
