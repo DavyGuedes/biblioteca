@@ -14,6 +14,7 @@
     <c:import url="/cabecalho.jsp"/>
 </head>
 <body>
+
 <div class="row">
     <div class="col-md-12 col-lg-12 col-sm-12 col-xl-12" style="background: url('/images/img-02.jpg') no-repeat;">
         <div class="row">
@@ -25,36 +26,39 @@
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4"></div>
         </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card flex-md-row mb-4 shadow-sm h-md-250">
-                    <div class="card-body d-flex flex-column align-items-start">
-                        <strong class="d-inline-block mb-2 text-primary">Arcevo</strong>
-                        <h3 class="mb-0">
-                            <a class="text-dark">Alugar Livros</a>
-                        </h3>
-                        <div class="mb-1 text-muted"> </div>
-                        <p class="card-text mb-auto"></p>
-                        <a href="/sistema?logica=PesquisarLivroLocacao&titulo=">acessar</a>
-                    </div>
-                    <i class="card-img-right flex-auto d-none d-lg-block fa fa-search"
-                       style="font-size: 16em;"></i>
-                </div>
-            </div>
+        <div class="container pb-0 px-5">
+            <div class="row mb-2">
 
-            <div class="col-md-6">
-                <div class="card flex-md-row mb-4 shadow-sm h-md-250">
-                    <div class="card-body d-flex flex-column align-items-start">
-                        <strong class="d-inline-block mb-2 text-primary">Arcevo</strong>
-                        <h3 class="mb-0">
-                            <a class="text-dark">Histórico</a>
-                        </h3>
-                        <div class="mb-1 text-muted">Lorem ipsum</div>
-                        <p class="card-text mb-auto">Donec pulvinar arcu vitae dolor suscipit dapibus.</p>
-                        <a href="/sistema?logica=HistoricoLocacao">acessar</a>
+                <div class="col-md-6">
+                    <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+                        <div class="card-body d-flex flex-column align-items-start">
+                            <strong class="d-inline-block mb-2 text-primary">Arcevo</strong>
+                            <h3 class="mb-0">
+                                <a class="text-dark">Alugar</a>
+                            </h3>
+                            <div class="mb-1 text-muted">Lorem ipsum</div>
+                            <p class="card-text mb-auto">Donec pulvinar arcu vitae dolor suscipit dapibus.</p>
+                            <a href="/sistema?logica=PesquisarLivroLocacao&titulo=">acessar</a>
+                        </div>
+                            <img class="card-img-right flex-auto d-none d-lg-block" src="/images/rent.jpg"
+                             alt="Thumbnail [200x250]" style="width: 200px; height: 250px;">
                     </div>
-                    <img class="card-img-right flex-auto d-none d-lg-block" src="/images/library.png"
-                         alt="Thumbnail [200x250]" style="width: 200px; height: 250px;">
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+                        <div class="card-body d-flex flex-column align-items-start">
+                            <strong class="d-inline-block mb-2 text-primary">Arcevo</strong>
+                            <h3 class="mb-0">
+                                <a class="text-dark">Histórico</a>
+                            </h3>
+                            <div class="mb-1 text-muted">Lorem ipsum</div>
+                            <p class="card-text mb-auto">Donec pulvinar arcu vitae dolor suscipit dapibus.</p>
+                            <a href="/sistema?logica=HistoricoLocacao">acessar</a>
+                        </div>
+                        <img class="card-img-right flex-auto d-none d-lg-block" src="/images/library.png"
+                             alt="Thumbnail [200x250]" style="width: 200px; height: 250px;">
+                    </div>
                 </div>
             </div>
         </div>
