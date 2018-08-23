@@ -91,11 +91,6 @@
                           placeholder="Entre com a descrição..."></textarea>
                 <span class="focus-input100"></span>
             </div>
-            <!-- <input type="submit" value="Enviar"/> -->
-            <%--<div class="container-contact100-form-btn">--%>
-            <%--<input type="submit" value="Cadastrar" class="contact100-form-btn">--%>
-            <%--</div>--%>
-
             <button id="btnCadastrar" class="login100-form-btn"  type="submit">Cadastrar</button>
         </form>
     </div>

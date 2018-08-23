@@ -14,25 +14,21 @@
     <c:import url="/cabecalho.jsp"/>
 </head>
 <body>
-<div style="background-image: url('/images/img-02.jpg');">
+<div class="container-fundo" style="background-image: url('/images/img-02.jpg');">
     <div id="add">
         <br>
-        <span class="contact100-form-title"> CADASTRAR CATEGORIA </span>
-        <!--<h2>Livro</h2> -->
+        <div class="container-login100-form-btn p-t-10">
+            <h1 id="tituloCadastrarLivro" class="login100-form-btn">CADASTRAR CATEGORIA</h1>
+        </div>
         <form action="/sistema" method="post" id="formAddCategoria">
             <input type="hidden" name="logica" value="AdicionaCategoria"/>
-
-            <div class="wrap-input100 validate-input" data-validate="Nome necessário">
-                <label class="label-input100" for="titulo">Nome</label>
-                <input id="titulo" class="input100" type="text" name="nome" placeholder="Entre com o nome..."
+            <div class="wrap-input100 validate-input" data-validate="Categoria necessária">
+                <label class="label-input100" for="categoria">CATEGORIA</label>
+                <input id="categoria" class="input100" type="text" name="nome" placeholder="Entre com a categoria..."
                        required="required"/>
                 <span class="focus-input100"></span>
             </div>
-
-
-            <div class="container-contact100-form-btn">
-                <input type="submit" value="Cadastrar" class="contact100-form-btn">
-            </div>
+            <button id="btnCadastrar" class="login100-form-btn"  type="submit">Cadastrar</button>
         </form>
     </div>
     <br>
