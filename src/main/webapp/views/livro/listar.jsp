@@ -19,9 +19,12 @@
 <div class="row">
     <div class="limiter">
         <div class="container-fundo" style="background-image: url('../../images/img-02.jpg');">
-            <div class="container-login100-form-btn p-t-10">
-                <h1 id="titulo" class="login100-form-btn">Lista de Livros</h1>
-            </div>
+            <%--<div class="container-login100-form-btn p-t-10">--%>
+                <%--<h1 id="titulo" class="login100-form-btn">Lista de Livros</h1>--%>
+            <%--</div>--%>
+                <div class="container-login100-form-btn p-t-10">
+                    <h1 id="tituloCadastrarLivro" class="login100-form-btn">LISTA DE LIVROS</h1>
+                </div>
 
             <div id="Lista de Livros" class="container">
                 <table class="table table-hover" align="center" border="1">

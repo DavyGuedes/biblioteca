@@ -10,16 +10,19 @@
 <div class="container-fundo" style="background-image: url('../../images/img-02.jpg');">
     <div id="add">
         <br>
-        <%--<span class="contact100-form-title"> CADASTRAR LIVRO </span>--%>
+
+        <%--<div class="container-login100-form-btn p-t-10">--%>
+            <%--<h1 id="titulo" class="login100-form-btn">CADASTRAR LIVRO</h1>--%>
+        <%--</div>--%>
         <div class="container-login100-form-btn p-t-10">
-            <h1 id="titulo" class="login100-form-btn">CADASTRAR LIVRO</h1>
+            <h1 id="tituloCadastrarLivro" class="login100-form-btn">CADASTRAR LIVRO</h1>
         </div>
+
 
         <form action="sistema" method="post" id="formAddLivro">
             <input type="hidden" name="logica" value="AdicionaLivro"/>
-
             <div class="wrap-input100 validate-input" data-validate="Titulo necessário">
-                <label class="label-input100" for="titulo">TÍTULO</label>
+                <label class="label-input100" for="tituloLivro">TÍTULO</label>
                 <input id="tituloLivro" class="input100" type="text" name="titulo" placeholder="Entre com o título..."
                        required="required"/>
                 <span class="focus-input100"></span>
