@@ -19,9 +19,18 @@
     <div class="limiter">
         <div class="container-fundo" style="background-image: url('/images/img-02.jpg');">
 
-            <div class="container-login100-form-btn p-t-10">
-                <h1 id="tituloCadastrarLivro" class="login100-form-btn">Sistema Biblioteca</h1>
+            <div class="container p-5">
+                <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+                    <div class="col-md-5 p-lg-5 mx-auto my-lg-5">
+                        <h2 class="display-4 font-weight-normal">Sistema Biblioteca</h2>
+                        <p class="lead font-weight-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. .</p>
+                        <a class="btn btn-outline-secondary" href="#">Coming soon</a>
+                    </div>
+                    <div class="product-device shadow-sm d-none d-md-block"></div>
+                    <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+                </div>
             </div>
+    
 
 
             <div class="container pb-0 px-5">
