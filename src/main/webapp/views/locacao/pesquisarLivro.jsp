@@ -14,21 +14,27 @@
     <c:import url="/cabecalho.jsp"/>
 
 <body>
-<div style="background-image: url('/images/img-02.jpg');">
+<div class="container-fundo" style="background-image: url('../../images/img-02.jpg');">
+
+
+    <%--<span class="contact100-form-title"> PESQUISAR LIVRO - LOCAÇÃO </span>--%>
+    <div class="container-login100-form-btn p-t-10">
+        <h1 id="tituloCadastrarLivro" class="login100-form-btn">PESQUISAR LIVRO - LOCAÇÃO</h1>
+    </div>
     <div class="container p-5">
         <div class="p-5">
-            <span class="contact100-form-title"> PESQUISAR LIVRO - LOCAÇÃO </span>
-            <!--<h2>Livro</h2> -->
             <form action="/sistema" method="post">
                 <input type="hidden" name="logica" value="PesquisarLivroLocacao"/>
+              
                 <div class="wrap-input100 validate-input" data-validate="Titulo necessário">
-                    <label class="label-input100" for="titulo">TÍTULO</label>
-                    <input id="titulo" class="input100" type="text" name="titulo" value="${param.titulo}" placeholder="Entre com o título..."/>
+                    <label class="label-input100" for="tituloLivro">TÍTULO</label>
+                    <input id="tituloLivro" class="input100" type="text" name="titulo"
+                           placeholder="Entre com o título..."
+                           required="required"/>
                     <span class="focus-input100"></span>
                 </div>
-                <div class="container-contact100-form-btn">
-                    <input type="submit" value="Buscar" class="contact100-form-btn">
-                </div>
+
+                <button id="btnMenu" class="login100-form-btn" value="Buscar" type="submit">Buscar</button>
             </form>
         </div>
         <table class="table table-hover" align="center" border="1">
@@ -62,16 +68,18 @@
                             <c:otherwise>
                                 <a class="btn btn-danger" href="#" readonly="readonly">Indisponível</a>
                             </c:otherwise>
-                        </c:choose> 
-                        
+                        </c:choose>
+
                     </td>
                 </tr>
                 </tbody>
             </c:forEach>
         </table>
-        <div class="container-contact100-form-btn">
-            <a class="contact100-form-btn" href="/sistema?logica=Menu">Menu</a>
-        </div>
+        <br>
+        <br>
+        <form action="/sistema?logica=Menu" method="post">
+            <button id="btnMenu" class="login100-form-btn" type="submit">Menu</button>
+        </form>
     </div>
 </div>
 <footer>
