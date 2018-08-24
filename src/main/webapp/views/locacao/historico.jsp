@@ -18,9 +18,10 @@
 <div class="row">
     <div class="limiter">
         <div class="container-fundo" style="background-image: url('../../images/img-02.jpg');">
-            <div class="container-login100-form-btn p-t-10">
-                <h1 id="titulo" class="login100-form-btn">Histórico de Locações</h1>
-            </div>
+            
+                <div class="container-login100-form-btn p-t-10">
+                    <h1 id="tituloCadastrarLivro" class="login100-form-btn">HISTÓRICO DE LOCAÇÕES</h1>
+                </div>
 
             <div class="container">
                 <table class="table table-hover" align="center" border="1">
@@ -57,6 +58,8 @@
                     </c:forEach>
                 </table>
             </div>
+                <br>
+                <br>
             <form action="/sistema?logica=Menu" method="post">
                 <button id="btnMenu" class="login100-form-btn" type="submit">Menu</button>
             </form>
