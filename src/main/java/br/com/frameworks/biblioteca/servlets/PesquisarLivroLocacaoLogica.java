@@ -18,6 +18,7 @@ public class PesquisarLivroLocacaoLogica implements Logica {
         List<Livro> livros = livroDao.findByTittle(tituloBuscado);
 
         request.setAttribute("livros", livros);
+        request.setAttribute("titulo", tituloBuscado);
         RequestDispatcher rd = request.getRequestDispatcher("/views/locacao/pesquisarLivro.jsp");
         rd.forward(request, response);
     }

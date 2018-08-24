@@ -28,7 +28,7 @@
               
                 <div class="wrap-input100 validate-input" data-validate="Titulo necessário">
                     <label class="label-input100" for="tituloLivro">TÍTULO</label>
-                    <input id="tituloLivro" class="input100" type="text" name="titulo"
+                    <input id="tituloLivro" class="input100" type="text" name="titulo" value="${titulo}"
                            placeholder="Entre com o título..."
                            required="required"/>
                     <span class="focus-input100"></span>
