@@ -1,0 +1,18 @@
+<createTable tableName="usuario"
+             remarks="A table to contain all the users">
+    <column name="id" type="int">
+        <constraints nullable="false" primaryKey="true"/>
+    </column>
+    <column name="name" type="varchar(100)">
+        <constraints nullable="false"/>
+    </column>
+    <column name="login" type="varchar(100)">
+        <constraints nullable="false"/>
+    </column>
+    <column name="senha" type="varchar(100)">
+        <constraints nullable="false"/>
+    </column>
+    <column name="tipo_usuario" type="varchar(100)">
+        <constraints nullable="false"/>
+    </column>
+</createTable>
